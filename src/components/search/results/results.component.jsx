@@ -3,16 +3,24 @@ import Card from '../../card/card.component';
 import {useContext} from 'react';
 import {SearchContext} from '../search.component';
 function Results() {
-    const {movies, isEmptyQuery, searchError} = useContext(SearchContext);
+    const {movies, isMore, currentPage, doSearch, isEmptyQuery, searchError} = useContext(SearchContext);
+    function searchMore (){
+        doSearch(currentPage + 1);
+    }
+    const renderCards = () => {
+        return movies && movies.map((movie, index) => {
+            const {imdbID} = movie;
+            return(
+                <Card key={imdbID+index} movie={movie} />
+            );})
+    };
     return (
             <div className="results">
                 {
-                    movies.map((movie) => {
-                        console.log(movie)
-                        const {imdbID} = movie;
-                        return(
-                            <Card key={imdbID} movie={movie} />
-                        );})
+                    renderCards()
+                }
+                {
+                    !!movies.length && isMore && <div className="results__show-more-container"><div onClick={searchMore} className="results__show-more-btn">show more</div></div>
                 }
                 {
                     isEmptyQuery && <p className='results__msg'>Type Movie Or TV Show.</p>

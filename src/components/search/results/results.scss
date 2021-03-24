@@ -19,6 +19,27 @@
   display: flex;
   min-height: calc(100vh - #{$header-height} - 5rem);
   flex-wrap: wrap;
+  &__show-more-container {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    @include respond(tab-land) {
+      padding: 2rem;
+    }
+  }
+  &__show-more-btn {
+    margin: 1rem auto auto;
+    justify-self: center;
+    color: $yellow-imdb;
+    cursor: pointer;
+    font-size: 1.6rem;
+    &:hover {
+      color: darken($yellow-imdb, 5%)
+    }
+    &:active {
+      color: darken($yellow-imdb, 10%)
+    }
+  }
   &__msg {
     margin: 8rem auto auto;
     justify-self: center;

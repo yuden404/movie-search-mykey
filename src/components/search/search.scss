@@ -1,7 +1,6 @@
 @import 'src/scss/variables';
 .header {
-  position: sticky;
-  top: 0;
+  position: static;
   z-index: 1;
   height: $header-height;
   width: 100%;

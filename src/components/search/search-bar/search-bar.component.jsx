@@ -2,10 +2,9 @@ import './search-bar.scss';
 import {useState, useContext} from 'react';
 import {SearchContext} from '../search.component';
 function SearchBar() {
-    const [query, setQuery] = useState('');
-    const {doSearch} = useContext(SearchContext);
+    const {doSearch, query, setQuery} = useContext(SearchContext);
     function search (){
-        doSearch(query);
+        doSearch(1);
     }
     function handleKeyDown (e) {
         if (e.key === 'Enter') {

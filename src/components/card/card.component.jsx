@@ -1,4 +1,5 @@
 import './card.scss';
+import {LazyLoadImage} from 'react-lazy-load-image-component';
 function Card({movie}) {
     const {Title, Year, Poster} = movie;
     const renderPoster = (Poster) => {
@@ -7,15 +8,13 @@ function Card({movie}) {
                 Poster Not Available
             </div>;
         }
-        return <img srcSet={Poster} alt={`poster of the movie ${Title}`}/>;
+        return <LazyLoadImage src={Poster} alt={`poster of the movie ${Title}`}></LazyLoadImage>;
     }
-    return (
-        <div className="movie-card">
-            <div className="movie-card__title" title={Title}>{Title}</div>
-            <div className="movie-card__year">{Year}</div>
-            {renderPoster(Poster)}
-        </div>
-    );
+    return (<div className="movie-card">
+        <div className="movie-card__title" title={Title}>{Title}</div>
+        <div className="movie-card__year">{Year}</div>
+        {renderPoster(Poster)}
+    </div>);
 }
 
 export default Card;
