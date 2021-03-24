@@ -1,0 +1,33 @@
+@import 'src/scss/variables';
+@import 'src/scss/mixins';
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  &__input {
+    height: 3.2rem;
+    border-radius: .8rem;
+    width: 60rem;
+    @include respond(phone) {
+      width: 43rem;
+      font-size: 1.65rem;
+    }
+    padding-left: 1rem;
+    &:focus{
+      outline: none;
+    }
+  }
+  &__button {
+    width: 2.5rem;
+    height: 3.4rem;
+    background-image: url('../../../assets/icons/magnify.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 0;
+    padding: 0 1rem;
+    cursor: pointer;
+    border-left: .2rem solid $dark-grey-color;
+  }
+}

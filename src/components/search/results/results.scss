@@ -1,0 +1,35 @@
+@import 'src/scss/variables';
+@import 'src/scss/mixins';
+.results {
+  padding: 2.5rem 0;
+  width: calc(23.4rem * 5);
+  @include respond(big-screen) {
+    width: calc(23.4rem * 6);
+  }
+  @include respond(tab-land) {
+    width: calc(23.4rem * 4);
+  }
+  @include respond(tab-port) {
+    width: calc(23.4rem * 3);
+  }
+  @include respond(phone) {
+    width: calc(23.4rem * 2);
+  }
+
+  display: flex;
+  min-height: calc(100vh - #{$header-height} - 5rem);
+  flex-wrap: wrap;
+  &__msg {
+    margin: 8rem auto auto;
+    justify-self: center;
+    color: $yellow-imdb;
+    font-size: 2.4rem;
+    font-weight: 700;
+    width: 35rem;
+    height: 7rem;
+    line-height: 7rem;
+    border-radius: 1rem;
+    background: lighten($dark-grey-color, 12%);
+    text-align: center;
+  }
+}

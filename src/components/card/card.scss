@@ -1,0 +1,51 @@
+@import 'src/scss/variables';
+
+.movie-card {
+  float: left;
+  margin: 2.5rem 1.5rem 0;
+  width: 20.4rem;
+  height: calc(30.3rem + 3.5rem);
+  overflow: hidden;
+  background: $dark-grey-color;
+  position: relative;
+  border-radius: .5rem;
+  box-shadow: 0 0 .8rem -.1rem $yellow-imdb;
+  &__title {
+    height: 3.5rem;
+    line-height: 3.5rem;
+    font-size: 1.6rem;
+    padding: 0 1.5rem;
+    color: $yellow-imdb;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  &__year {
+    position: absolute;
+    background: lighten($dark-grey-color, 5%);
+    opacity: 0.85;
+    color: $yellow-imdb;
+    font-weight: 700;
+    right: 1rem;
+    padding: 1rem;
+    height: .8rem;
+    line-height: .8rem;
+    text-align: center;
+    border-radius: 2rem;
+    bottom: 1rem;
+  }
+  .poster-not-available {
+    color: lighten($dark-grey-color, 30%);
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  img {
+    width: 100%;
+    height: 30.3rem;
+    object-fit: cover;
+  }
+}

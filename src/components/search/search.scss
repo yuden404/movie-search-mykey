@@ -1,0 +1,12 @@
+@import 'src/scss/variables';
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: $header-height;
+  width: 100%;
+  background: $dark-grey-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
