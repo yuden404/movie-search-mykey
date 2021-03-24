@@ -16,8 +16,8 @@ function Search() {
     const calcPages = (totalResults) => {
         return Math.ceil(totalResults / 10);
     }
-    const doSearch = async (page) => {
-        if (pages !== null && pages <= page) {
+    const doSearch = async (page, isNewSearch) => {
+        if (!isNewSearch && pages !== null && pages <= page) {
             setIsMore(false);
             return;
         }

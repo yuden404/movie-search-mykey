@@ -7,11 +7,11 @@ export async function searchMovieByName (movieName, page) {
 
     let year = regex.exec(movieName);
     if (year) {
-        movieName = movieName.replace(year[0], "").trim();
+        movieName = movieName.replace(year[0], "");
         year = year[0].match(/\d+/)[0];
     }
     try {
-        const res = await axios.get(`${omdbURI}?s=${movieName}&apikey=${apiKey}${year ? `&y=${year}`: ''}&page=${page}`);
+        const res = await axios.get(`${omdbURI}?s=${movieName.trim()}&apikey=${apiKey}${year ? `&y=${year}`: ''}&page=${page}`);
         return res;
     } catch(e) {
         throw new Error(e);

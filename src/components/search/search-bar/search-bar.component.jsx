@@ -4,7 +4,7 @@ import {SearchContext} from '../search.component';
 function SearchBar() {
     const {doSearch, query, setQuery} = useContext(SearchContext);
     function search (){
-        doSearch(1);
+        doSearch(1, true);
     }
     function handleKeyDown (e) {
         if (e.key === 'Enter') {

@@ -5,7 +5,7 @@ import {SearchContext} from '../search.component';
 function Results() {
     const {movies, isMore, currentPage, doSearch, isEmptyQuery, searchError} = useContext(SearchContext);
     function searchMore (){
-        doSearch(currentPage + 1);
+        doSearch(currentPage + 1, false);
     }
     const renderCards = () => {
         return movies && movies.map((movie, index) => {
