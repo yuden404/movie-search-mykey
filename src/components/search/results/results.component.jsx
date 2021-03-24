@@ -15,7 +15,7 @@ function Results() {
                         );})
                 }
                 {
-                    isEmptyQuery && <p className='results__msg'>Type yMovie Or TV Show.</p>
+                    isEmptyQuery && <p className='results__msg'>Type Movie Or TV Show.</p>
                 }
                 {
                     searchError && <p className='results__msg'>{searchError}</p>
