@@ -1,5 +1,5 @@
 import './search-bar.scss';
-import {useState, useContext} from 'react';
+import {useContext} from 'react';
 import {SearchContext} from '../search.component';
 function SearchBar() {
     const {doSearch, query, setQuery} = useContext(SearchContext);
