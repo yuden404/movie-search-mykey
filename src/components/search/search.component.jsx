@@ -25,7 +25,7 @@ function Search() {
         setMovies([]);
     }
     const doSearch = async (page, isNewSearch) => {
-        if (!isNewSearch && pages !== null && pages <= page) {
+        if (!isNewSearch && pages !== null && pages < page) {
             setHasMore(false);
             return;
         }
