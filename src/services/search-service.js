@@ -1,6 +1,6 @@
 import axios from 'axios';
 const omdbURI = 'http://www.omdbapi.com/';
-const apiKey = '157f34ed';
+const apiKey = 'a2cb4d3e';
 
 export async function searchMovieByName (movieName, page) {
     const regex = new RegExp(/\((year:\s*[0-9]{4}\))/);
