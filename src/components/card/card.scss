@@ -4,12 +4,35 @@
   float: left;
   margin: 2.5rem 1.5rem 0;
   width: 20.4rem;
-  height: calc(30.3rem + 3.5rem);
-  overflow: hidden;
-  background: $dark-grey-color;
   position: relative;
-  border-radius: .5rem;
-  box-shadow: 0 0 .8rem -.1rem $yellow-imdb;
+  cursor: pointer;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: calc(30.3rem + 3.5rem);
+  overflow: visible;
+  &__side {
+    height: calc(30.3rem + 3.5rem);
+    border-radius: .5rem;
+    background: $dark-grey-color;
+    transition: transform 1s ease;
+    box-shadow: 0 0 1rem -.1rem $yellow-imdb;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    &--back {
+      transform: rotateY(180deg);
+    }
+  }
+  &.rotate {
+    .movie-card__side--front {
+      transform: rotateY(180deg);
+    }
+    .movie-card__side--back {
+      transform: rotateY(0deg);
+    }
+  }
   &__title {
     height: 3.5rem;
     line-height: 3.5rem;
@@ -20,6 +43,25 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
+    background: $dark-black-color;
+  }
+  &__back-title, &__back-release, &__back-type, &__back-poster-link, &__more-info, &__more-info {
+    font-size: 1.4rem;
+    color: $yellow-imdb;
+    margin: .5rem 1.5rem 0;
+    display: block;
+  }
+  &__back-title {
+    margin-top: 2rem;
+  }
+  &__back-poster-link, &__more-info, &__more-info {
+    display: inline-block;
+    a {
+      margin: 0;
+      color: $yellow-imdb;
+    }
   }
   &__year {
     position: absolute;
@@ -47,5 +89,8 @@
     width: 100%;
     height: 30.3rem;
     object-fit: cover;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+
   }
 }
