@@ -16,18 +16,20 @@ function Results() {
     };
     return (
             <div className="results">
-                {
-                    renderCards()
-                }
-                {
-                    !!movies.length && isMore && <div className="results__show-more-container"><div onClick={searchMore} className="results__show-more-btn">show more</div></div>
-                }
-                {
-                    isEmptyQuery && <p className='results__msg'>Type Movie Or TV Show.</p>
-                }
-                {
-                    searchError && <p className='results__msg'>{searchError}</p>
-                }
+                <div className="results-container">
+                    {
+                        renderCards()
+                    }
+                    {
+                        !!movies.length && isMore && <div className="results__show-more-container"><div onClick={searchMore} className="results__show-more-btn">show more</div></div>
+                    }
+                    {
+                        isEmptyQuery && <p className='results__msg'>Type Movie Or TV Show.</p>
+                    }
+                    {
+                        searchError && <p className='results__msg'>{searchError}</p>
+                    }
+                </div>
             </div>
     );
 }
